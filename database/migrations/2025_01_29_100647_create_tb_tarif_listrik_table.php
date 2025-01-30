@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('tb_tarif_listrik', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tbuser_id')->references('id')->on('users');
             $table->string('kdtarif');
             $table->integer('beban');
             $table->integer('tarif_perkwh');

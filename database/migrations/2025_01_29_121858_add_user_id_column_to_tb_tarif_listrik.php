@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tbpelanggan', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_pelanggan', 40);
-            $table->string('alamat', 50);
-            $table->timestamps();
+        Schema::table('tb_tarif_listrik', function (Blueprint $table) {
+            $table->foreignId('tbuser_id')->after('tarif_perkwh')->references('id')->on('tbpelanggan');
         });
     }
 
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pelanggan');
+        Schema::table('tb_tarif_listrik', function (Blueprint $table) {
+            $table->dropColumn('tbuser_id');
+        });
     }
 };
