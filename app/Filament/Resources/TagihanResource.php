@@ -17,7 +17,13 @@ class TagihanResource extends Resource
 {
     protected static ?string $model = Tagihan::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-banknotes';
+
+    protected static ?string $pluralModelLabel = 'Tagihan';
+
+    protected static ?string $modelLabel = 'Tagihan';
+
+    protected static ?string $navigationGroup = 'Transaksi';
 
     public static function form(Form $form): Form
     {

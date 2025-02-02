@@ -17,7 +17,13 @@ class TarifListrikResource extends Resource
 {
     protected static ?string $model = TarifListrik::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-currency-dollar';
+
+    protected static ?string $navigationGroup = 'Master';
+
+    protected static ?string $pluralModelLabel = 'Tarif Listrik';
+
+    protected static ?string $modelLabel = 'Tarif Listrik';
 
     public static function form(Form $form): Form
     {
